@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/et_calc_display"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:gravity="end|center"
+        android:padding="26dp"
+        tools:text="110+132"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btn_equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="="
+        android:onClick="onEqualClick"
+        android:layout_gravity="bottom|end"/>
+
+</LinearLayout>
