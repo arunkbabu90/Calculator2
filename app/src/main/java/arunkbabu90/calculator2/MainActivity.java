@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         cValue = Double.parseDouble(value1) + cValue;
                     }
                     mIsFirstTime = false;
-                    mLastIndex = i;
+                    mLastIndex = i+1;
                     mLastOperation = ADD_OPERATION;
                     break;
                 case '-':
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         cValue = Double.parseDouble(value1) - cValue;
                     }
                     mIsFirstTime = false;
-                    mLastIndex = i;
+                    mLastIndex = i+1;
                     mLastOperation = SUB_OPERATION;
                     break;
                 case '*':
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         cValue = Double.parseDouble(value1) * cValue;
                     }
                     mIsFirstTime = false;
-                    mLastIndex = i;
+                    mLastIndex = i+1;
                     mLastOperation = MUL_OPERATION;
                     break;
                 case '/':
@@ -81,26 +81,26 @@ public class MainActivity extends AppCompatActivity {
                         cValue = Double.parseDouble(value1) / cValue;
                     }
                     mIsFirstTime = false;
-                    mLastIndex = i;
+                    mLastIndex = i+1;
                     mLastOperation = DIV_OPERATION;
                     break;
             }
         }
 
         // Calculate with the trailing value
-        double res = 0;
+        double res;
         switch (mLastOperation) {
             case ADD_OPERATION:
-                res = cValue + Double.valueOf(expression.substring(mLastIndex + 1));
+                res = cValue + Double.valueOf(expression.substring(mLastIndex));
                 break;
             case SUB_OPERATION:
-                res = cValue - Double.valueOf(expression.substring(mLastIndex + 1));
+                res = cValue - Double.valueOf(expression.substring(mLastIndex));
                 break;
             case MUL_OPERATION:
-                res = cValue * Double.valueOf(expression.substring(mLastIndex + 1));
+                res = cValue * Double.valueOf(expression.substring(mLastIndex));
                 break;
             case DIV_OPERATION:
-                res = cValue / Double.valueOf(expression.substring(mLastIndex + 1));
+                res = cValue / Double.valueOf(expression.substring(mLastIndex));
                 break;
             default:
                 res = Double.parseDouble(expression);
