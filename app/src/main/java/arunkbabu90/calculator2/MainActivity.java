@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
             case DIV_OPERATION:
                 res = cValue / Double.valueOf(expression.substring(mLastIndex + 1));
                 break;
+            default:
+                res = Double.parseDouble(expression);
         }
 
         String result = new DecimalFormat("#.##").format(res);
